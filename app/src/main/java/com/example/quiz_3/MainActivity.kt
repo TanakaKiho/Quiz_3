@@ -1,6 +1,7 @@
 package com.example.quiz_3
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
@@ -22,5 +23,8 @@ class MainActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
-    }
+        GenreEnter.setOnClickListener {
+            Log.d(TAG, "Test button pressed!");
+            mTextView.text = "TestButtonのクリック検知！"
+        }
 }
