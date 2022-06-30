@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Quiz_3</string>
+    <string name="Title">ジャンル選択</string>
+    <string name="genreText">このジャンルで　始める</string>
+
+
+    <string-array name="planets_array">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+    </string-array>
 </resources>
