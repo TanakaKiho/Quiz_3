@@ -1,10 +1,14 @@
 package com.example.quiz_3
 
+import android.R
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,9 +27,14 @@ class MainActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
-        /*GenreEnter.setOnClickListener {
-            Log.d(TAG, "Test button pressed!");
-            mTextView.text = "TestButtonのクリック検知！"
-        }*/
+        GenreEnter.setOnClickListener {
+            //インテントの作成
+            val intent = Intent(this, QuizActivity::class.java)
+            //データをセット
+            val editText = findViewById<View>(R.id.editText) as EditText
+            intent.putExtra("sendText", editText.text.toString())
+            //遷移先の画面を起動
+            startActivity(intent)
+        }
     }
 }
