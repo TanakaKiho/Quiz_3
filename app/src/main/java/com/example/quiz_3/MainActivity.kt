@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
-        GenreEnter.setOnClickListener {
+        /*GenreEnter.setOnClickListener {
             Log.d(TAG, "Test button pressed!");
             mTextView.text = "TestButtonのクリック検知！"
-        }
+        }*/
+    }
 }
