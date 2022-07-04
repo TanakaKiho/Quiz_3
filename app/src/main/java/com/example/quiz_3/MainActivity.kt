@@ -1,11 +1,11 @@
 package com.example.quiz_3
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 
@@ -35,6 +35,15 @@ class MainActivity : AppCompatActivity() {
             //データをセット
             //val editText = findViewById<View>(R.id.editText) as EditText
             //intent.putExtra("sendText", editText.text.toString())
+
+            // Spinnerオブジェクトを取得
+            val spinner = findViewById<View>(R.id.spinner) as Spinner
+
+            // 選択されているアイテムのIndexを取得
+            val idx = spinner.selectedItemPosition
+
+            // 選択されているアイテムを取得
+            val item = spinner.selectedItem as String
             //遷移先の画面を起動
             startActivity(intent)
         }
