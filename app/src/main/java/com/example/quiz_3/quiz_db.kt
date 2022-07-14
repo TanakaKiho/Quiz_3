@@ -21,8 +21,8 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         //Todoを登録するテーブル
         sb.append("CREATE TABLE quiz_list_table (")
         sb.append("id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , ")
-        sb.append("genre_type TEXT, ")
-        sb.append("genre_num INTEGER, ")
+        //sb.append("genre_type TEXT, ")
+        //sb.append("genre_num INTEGER, ")
         sb.append("question_image BLOB, ")
         sb.append("answer INTEGER, ")
         sb.append("choice_1 TEXT, ")
@@ -37,12 +37,12 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         //SQLの実行
         db.execSQL(sqlquiz)
 
-        sb.clear()
+        //sb.clear()
         sb.append("INSERT INTO categories ")
-        sb.append("(_id, genre_type, genre_num, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
+        sb.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
         sb.append("0, ")
-        sb.append("'スポーツ', ")
-        sb.append("1, ")
+        //sb.append("'スポーツ', ")
+        //sb.append("1, ")
         sb.append("'sp_1.png', ")
         sb.append("4, ")
         sb.append("'1点', ")
@@ -56,6 +56,8 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         db.execSQL(sqlIns)
     }
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+            val db = this.writableDatabase
+            val sql = "SELECT genre_type,question_image,answer,choice_1,choice_2,choice_3,choice_4 FROM quiz_list_table WHERE genre_num ="+ 1 +"AND genre_num = "+ 1 +" ;"
 
     }
 }
