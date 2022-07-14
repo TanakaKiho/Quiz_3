@@ -57,7 +57,7 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
     }
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
             val db = this.writableDatabase
-            val sql = "SELECT genre_type,question_image,answer,choice_1,choice_2,choice_3,choice_4 FROM quiz_list_table WHERE genre_num ="+ 1 +"AND genre_num = "+ 1 +" ;"
+            val sql = "SELECT question_image,answer,choice_1,choice_2,choice_3,choice_4 FROM quiz_list_table WHERE _id ="+ 1 +";"
 
     }
 }
