@@ -9,9 +9,9 @@ class QuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
 
-        val genreText : TextView = findViewById(com.example.quiz_3.R.id.genreText)
+        //val genreText : TextView = findViewById(com.example.quiz_3.R.id.genreText)
 
         val genre = intent.getStringExtra("VALUE")
-        genreText.text = "${genre}"
+        //genreText.text = "${genre}"
     }
 }
