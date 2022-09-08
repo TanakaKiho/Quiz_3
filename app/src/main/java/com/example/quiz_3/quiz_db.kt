@@ -3,14 +3,16 @@ package com.example.quiz_3
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 
 
-
-public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION){
+public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION) {
     var errMsg = ""
+
     companion object {
         //データベースファイル名の定数フィールド
         private const val DATABASE_NAME = "quiz_maindb.db"
+
         //バージョン情報abstract
         private const val DATABASE_VERSION = 1
     }
@@ -55,9 +57,9 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
 
         db.execSQL(sqlIns)
     }
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-            val db = this.writableDatabase
-            val sql = "SELECT question_image,answer,choice_1,choice_2,choice_3,choice_4 FROM quiz_list_table WHERE _id ="+ 1 +";"
 
     }
 }
+
