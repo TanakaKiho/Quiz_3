@@ -1,12 +1,8 @@
 package com.example.quiz_3
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -17,8 +13,16 @@ class MainActivity : AppCompatActivity() {
 
         //Viewの取得
         val genreEnter : Button = findViewById(com.example.quiz_3.R.id.GenreEnter)
-        val spinner: Spinner = findViewById(com.example.quiz_3.R.id.spinner)
+        genreEnter.setOnClickListener {
+            //インテントの作成
+            val intent = Intent(this, QuizActivity::class.java)
+            //遷移先の画面を起動
+            startActivity(intent)
+        }
+
+       // val spinner: Spinner = findViewById(com.example.quiz_3.R.id.spinner)
 // Create an ArrayAdapter using the string array and a default spinner layout
+        /*
         ArrayAdapter.createFromResource(
                 this,
                 com.example.quiz_3.R.array.planets_array,
@@ -48,6 +52,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("VALUE", item.toString())
             //遷移先の画面を起動
             startActivity(intent)
-        }
+        }*/
     }
 }
