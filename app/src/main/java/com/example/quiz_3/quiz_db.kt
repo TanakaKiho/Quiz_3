@@ -46,7 +46,7 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         //sb2.append("0, ")
         //sb.append("'スポーツ', ")
         //sb.append("1, ")
-        sb2.append("'sp_1.png', ")
+        sb2.append("'sp_1', ")
         sb2.append("4, ")
         sb2.append("'1点', ")
         sb2.append("'2点', ")

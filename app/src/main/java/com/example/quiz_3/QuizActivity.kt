@@ -26,18 +26,19 @@ class QuizActivity : AppCompatActivity() {
             var ID=""
             //データベースよりTODOのリストを取得する
             val listQuiz = _helper.getQuizList(1)
-            val ima=listQuiz[1]
-            val ans=listQuiz[2]
-            val cho1=listQuiz[3]
-            val cho2=listQuiz[4]
-            val cho3=listQuiz[5]
-            val cho4=listQuiz[6]
+            val ima=listQuiz[2]
+            val ans=listQuiz[3]
+            val cho1=listQuiz[4]
+            val cho2=listQuiz[5]
+            val cho3=listQuiz[6]
+            val cho4=listQuiz[7]
 
-            val imag="sp_1.png"
+            //R.drawable.sp_1
+            val imag="sp_1"
             //アダプタオブジェクト
             // val adapter = ArrayAdapter(applicationContext, android.R.layout.simple_list_item_1, listQuiz)
             val image="R.drawable."+imag
-            //imageView.setImageResource()
+            imageView.setImageResource(resources.getIdentifier(imag,"drawable",packageName))
             buttonFirst.setText(cho1)
             buttonSecond.setText(cho2)
             buttonThird.setText(cho3)
