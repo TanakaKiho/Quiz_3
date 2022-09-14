@@ -3,7 +3,6 @@ package com.example.quiz_3
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
 
 
 public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION) {
@@ -19,6 +18,7 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
 
     override fun onCreate(db: SQLiteDatabase) {
         val sb = StringBuilder()
+        val sb2 = StringBuilder()
 
         //Todoを登録するテーブル
         sb.append("CREATE TABLE quiz_list_table (")
@@ -30,7 +30,7 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         sb.append("choice_1 TEXT, ")
         sb.append("choice_2 TEXT, ")
         sb.append("choice_3 TEXT, ")
-        sb.append("choice_4 TEXT, ")
+        sb.append("choice_4 TEXT ")
         sb.append(");")
 
         //SQLの実行
@@ -40,25 +40,78 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         db.execSQL(sqlquiz)
 
         //sb.clear()
-        sb.append("INSERT INTO categories ")
-        sb.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
-        sb.append("0, ")
+        sb2.append("INSERT INTO quiz_list_table ")
+        //sb2.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
+        sb2.append("(question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES (")
+        //sb2.append("0, ")
         //sb.append("'スポーツ', ")
         //sb.append("1, ")
-        sb.append("'sp_1.png', ")
-        sb.append("4, ")
-        sb.append("'1点', ")
-        sb.append("'2点', ")
-        sb.append("'3点', ")
-        sb.append("'5点', ")
-        sb.append(");")
+        sb2.append("'sp_1.png', ")
+        sb2.append("4, ")
+        sb2.append("'1点', ")
+        sb2.append("'2点', ")
+        sb2.append("'3点', ")
+        sb2.append("'5点' ")
+        sb2.append(");")
 
-        val sqlIns = sb.toString()
+        val sqlIns = sb2.toString()
 
         db.execSQL(sqlIns)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+
+    }
+
+    fun getQuizList(num:Int) :List<String> {
+        val listQuiz = mutableListOf("1")
+        //データベース接続オブジェクトを取得
+        val db = this.writableDatabase
+
+        //検索SQLを作成
+        val sql = "SELECT * FROM quiz_list_table WHERE id='"+num+"';"
+        //val sql = "SELECT * FROM quiz_list_table;"
+
+        //SQLの実行
+        val cursor = db.rawQuery(sql, null)
+
+        //カテゴリーのリストを作成
+        var todoTitle = ""
+
+        var note=""
+        while(cursor.moveToNext()) {
+            //IDの列インデックスを取得
+            val idxID = cursor.getColumnIndex("id")
+            val idxima = cursor.getColumnIndex("question_image")
+            val idxans = cursor.getColumnIndex("answer")
+            val idxc1 = cursor.getColumnIndex("choice_1")
+            val idxc2 = cursor.getColumnIndex("choice_2")
+            val idxc3 = cursor.getColumnIndex("choice_3")
+            val idxc4 = cursor.getColumnIndex("choice_4")
+
+            //IDの値を取得
+            note = cursor.getString(idxID)
+            //IDを確保
+            listQuiz.add(note);
+
+            note = cursor.getString(idxima)
+            listQuiz.add(note);
+            note = cursor.getString(idxans)
+            listQuiz.add(note);
+            note = cursor.getString(idxc1)
+            listQuiz.add(note);
+            note = cursor.getString(idxc2)
+            listQuiz.add(note);
+            note = cursor.getString(idxc3)
+            listQuiz.add(note);
+            note = cursor.getString(idxc4)
+            listQuiz.add(note);
+            note = cursor.getString(idxima)
+            listQuiz.add(note);
+
+        }
+
+        return listQuiz
 
     }
 }

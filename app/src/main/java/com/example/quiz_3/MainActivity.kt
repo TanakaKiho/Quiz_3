@@ -2,11 +2,16 @@ package com.example.quiz_3
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.quiz_3.R.layout.activity_main)
@@ -53,5 +58,6 @@ class MainActivity : AppCompatActivity() {
             //遷移先の画面を起動
             startActivity(intent)
         }*/
+
     }
 }
