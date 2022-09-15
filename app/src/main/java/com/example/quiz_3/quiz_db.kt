@@ -45,17 +45,19 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         //db.execSQL(del)
 
         //下の三行がひとつのかたまり
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '3点','2点', '3点','5点' );  "
+
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an1', 1, '心臓麻痺','呼吸停止', '脳出血','衰弱死' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('anime2', 2, '神砂嵐','波紋', '気化冷凍法','赤い荒縄' );  "
+        //sqlIns = sb2.toString()
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('anime3', 1, 'エイジャの赤石','エイダ赤石', 'アレキサンドライト','ダイヤモンド' );  "
         //var sqlIns = sb2.toString()
         db.execSQL(sb2)
-
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '2点','2点', '3点','5点' );  "
-        //sqlIns = sb2.toString()
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('anime4', 2, 'ザ・ワールド','エンペラー', 'エンプレス','クィーン' );  "
         db.execSQL(sb2)
-
-        //sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '1点','2点', '3点','5点' );  "
-        //sqlIns = sb2.toString()
-      //  db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('anime5', 1, '卵','幼虫', '蛹','成虫' );  "
+        db.execSQL(sb2)
 
         //sb2.append("INSERT INTO quiz_list_table ")
         //sb2.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
