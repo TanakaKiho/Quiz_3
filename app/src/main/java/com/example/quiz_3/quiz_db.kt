@@ -40,23 +40,29 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         db.execSQL(sqlquiz)
 
         //sb.clear()
-        sb2.append("INSERT INTO quiz_list_table ")
+
+        //下の三行がひとつのかたまり
+        sb2.append("INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '1点','2点', '3点','5点' );  ")
+        val sqlIns = sb2.toString()
+        db.execSQL(sqlIns)
+
+        //sb2.append("INSERT INTO quiz_list_table ")
         //sb2.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
-        sb2.append("(question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES (")
+        //sb2.append("(question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES (")
         //sb2.append("0, ")
         //sb.append("'スポーツ', ")
         //sb.append("1, ")
-        sb2.append("'sp_1', ")
-        sb2.append("4, ")
-        sb2.append("'1点', ")
-        sb2.append("'2点', ")
-        sb2.append("'3点', ")
-        sb2.append("'5点' ")
-        sb2.append(");")
+        //sb2.append("'sp_1', ")
+        //sb2.append("4, ")
+        //sb2.append("'1点', ")
+        //sb2.append("'2点', ")
+        //sb2.append("'3点', ")
+        //sb2.append("'5点' ")
+        //sb2.append(");")
 
-        val sqlIns = sb2.toString()
+        //val sqlIns = sb2.toString()
 
-        db.execSQL(sqlIns)
+       // db.execSQL(sqlIns)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

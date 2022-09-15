@@ -19,13 +19,13 @@ class QuizActivity : AppCompatActivity() {
         val buttonFourth : Button = findViewById(com.example.quiz_3.R.id.button10)
 
         //データを取得する関数
-        fun loadQuizList() {
+        fun loadQuizList(ID:Int) {
 
             //Todoリストを取得する
             //val lvTodoList = findViewById<ListView>(R.id.lvTodoList)
-            var ID=""
+            //val ID=num
             //データベースよりTODOのリストを取得する
-            val listQuiz = _helper.getQuizList(1)
+            val listQuiz = _helper.getQuizList(ID)
             val ima=listQuiz[2]
             val ans=listQuiz[3]
             val cho1=listQuiz[4]
@@ -34,11 +34,11 @@ class QuizActivity : AppCompatActivity() {
             val cho4=listQuiz[7]
 
             //R.drawable.sp_1
-            val imag="sp_1"
+            //val imag="sp_1"
             //アダプタオブジェクト
             // val adapter = ArrayAdapter(applicationContext, android.R.layout.simple_list_item_1, listQuiz)
-            val image="R.drawable."+imag
-            imageView.setImageResource(resources.getIdentifier(imag,"drawable",packageName))
+           // val image="R.drawable."+imag
+            imageView.setImageResource(resources.getIdentifier(ima,"drawable",packageName))
             buttonFirst.setText(cho1)
             buttonSecond.setText(cho2)
             buttonThird.setText(cho3)
@@ -46,7 +46,7 @@ class QuizActivity : AppCompatActivity() {
         }
 
         //データをロードする
-        loadQuizList()
+        loadQuizList(1)
 
         fun onDestroy() {
             //ヘルパーオブジェクトの開放
