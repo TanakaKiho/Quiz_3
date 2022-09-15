@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 
-public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION) {
+public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION) {
     var errMsg = ""
 
     companion object {
@@ -17,8 +17,10 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
     }
 
     override fun onCreate(db: SQLiteDatabase) {
+       // val del="drop table quiz_list_table if exits;"
         val sb = StringBuilder()
-        val sb2 = StringBuilder()
+        var sb2 =""
+        val sb3 = StringBuilder()
 
         //Todoを登録するテーブル
         sb.append("CREATE TABLE quiz_list_table (")
@@ -39,12 +41,21 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
         //SQLの実行
         db.execSQL(sqlquiz)
 
-        //sb.clear()
+        sb.clear()
+        //db.execSQL(del)
 
         //下の三行がひとつのかたまり
-        sb2.append("INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '1点','2点', '3点','5点' );  ")
-        val sqlIns = sb2.toString()
-        db.execSQL(sqlIns)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '3点','2点', '3点','5点' );  "
+        //var sqlIns = sb2.toString()
+        db.execSQL(sb2)
+
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '2点','2点', '3点','5点' );  "
+        //sqlIns = sb2.toString()
+        db.execSQL(sb2)
+
+        //sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp_1', 4, '1点','2点', '3点','5点' );  "
+        //sqlIns = sb2.toString()
+      //  db.execSQL(sb2)
 
         //sb2.append("INSERT INTO quiz_list_table ")
         //sb2.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
@@ -62,11 +73,14 @@ public class quiz_db(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,n
 
         //val sqlIns = sb2.toString()
 
-       // db.execSQL(sqlIns)
+      // db.execSQL(sqlIns)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
+    }
+    fun fileDelete(){
+        context.deleteDatabase("quiz_maindb.db")
     }
 
     fun getQuizList(num:Int) :List<String> {

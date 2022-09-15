@@ -1,5 +1,6 @@
 package com.example.quiz_3
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -8,15 +9,18 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class QuizActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
         val _helper = quiz_db(this)
+        _helper.fileDelete()
         val imageView : ImageView = findViewById(com.example.quiz_3.R.id.imageView)
         val buttonFirst : Button = findViewById(com.example.quiz_3.R.id.button4)
         val buttonSecond : Button = findViewById(com.example.quiz_3.R.id.button8)
         val buttonThird : Button = findViewById(com.example.quiz_3.R.id.button9)
         val buttonFourth : Button = findViewById(com.example.quiz_3.R.id.button10)
+        var ans=""
 
         //データを取得する関数
         fun loadQuizList(ID:Int) {
@@ -27,7 +31,7 @@ class QuizActivity : AppCompatActivity() {
             //データベースよりTODOのリストを取得する
             val listQuiz = _helper.getQuizList(ID)
             val ima=listQuiz[2]
-            val ans=listQuiz[3]
+            ans=listQuiz[3]
             val cho1=listQuiz[4]
             val cho2=listQuiz[5]
             val cho3=listQuiz[6]
@@ -45,8 +49,21 @@ class QuizActivity : AppCompatActivity() {
             buttonFourth.setText(cho4)
         }
 
-        //データをロードする
-        loadQuizList(1)
+        for (i in 1..10){
+            //データをロードする
+            loadQuizList(1)
+            buttonFirst.setOnClickListener{
+                AlertDialog.Builder(this)
+                       // .setTitle("")
+                        .setMessage("正解")
+                        .setPositiveButton("OK") { dialog, which ->}
+                        .show()
+            }
+            if(i!=10) continue
+
+            if(i==10) break
+        }
+
 
         fun onDestroy() {
             //ヘルパーオブジェクトの開放
