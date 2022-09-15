@@ -49,9 +49,10 @@ class QuizActivity : AppCompatActivity() {
             buttonFourth.setText(cho4)
         }
 
+        var n=1
         for (i in 1..10){
             //データをロードする
-            loadQuizList(1)
+            loadQuizList(n)
             buttonFirst.setOnClickListener{
                 AlertDialog.Builder(this)
                        // .setTitle("")
@@ -59,7 +60,11 @@ class QuizActivity : AppCompatActivity() {
                         .setPositiveButton("OK") { dialog, which ->}
                         .show()
             }
-            if(i!=10) continue
+            if(i!=10) {
+                n++
+                continue
+            }
+
 
             if(i==10) break
         }

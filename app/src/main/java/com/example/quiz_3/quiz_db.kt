@@ -83,8 +83,9 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         context.deleteDatabase("quiz_maindb.db")
     }
 
+    val listQuiz = mutableListOf("1")
     fun getQuizList(num:Int) :List<String> {
-        val listQuiz = mutableListOf("1")
+
         //データベース接続オブジェクトを取得
         val db = this.writableDatabase
 
