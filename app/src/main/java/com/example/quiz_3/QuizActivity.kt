@@ -15,12 +15,29 @@ class QuizActivity : AppCompatActivity() {
         setContentView(R.layout.activity_quiz)
         val _helper = quiz_db(this)
         _helper.fileDelete()
-        val imageView : ImageView = findViewById(com.example.quiz_3.R.id.imageView)
-        val buttonFirst : Button = findViewById(com.example.quiz_3.R.id.button4)
-        val buttonSecond : Button = findViewById(com.example.quiz_3.R.id.button8)
-        val buttonThird : Button = findViewById(com.example.quiz_3.R.id.button9)
-        val buttonFourth : Button = findViewById(com.example.quiz_3.R.id.button10)
+        val imageView : ImageView = findViewById(R.id.imageView)
+        val buttonFirst : Button = findViewById(R.id.button4)
+        val buttonSecond : Button = findViewById(R.id.button8)
+        val buttonThird : Button = findViewById(R.id.button9)
+        val buttonFourth : Button = findViewById(R.id.button10)
         var ans=""
+
+        var Quiz: IntArray = intArrayOf(0,0,0,0,0,0,0,0,0,0)
+        val range=(1..5)
+        for(i in 0..9){
+            var n=range.random()
+            for(k in 0..i){
+                if(Quiz[k]==n){
+                    n=range.random()
+                    k==0
+                }else if(k==i){
+                    Quiz[k]=n
+                    break
+                }else{
+
+                }
+            }
+        }
 
         //データを取得する関数
         fun loadQuizList(ID:Int) {
@@ -49,9 +66,9 @@ class QuizActivity : AppCompatActivity() {
             buttonFourth.setText(cho4)
         }
 
-        for (i in 1..10){
+        for (i in 0..9){
             //データをロードする
-            loadQuizList(n)
+            loadQuizList(Quiz[i])
             //loadQuizList(5)
             buttonFirst.setOnClickListener{
                 AlertDialog.Builder(this)
@@ -78,7 +95,7 @@ class QuizActivity : AppCompatActivity() {
 
         //val genre = intent.getStringExtra("VALUE")
         //genreText.text = "${genre}"
-        val modoruButton : Button = findViewById(com.example.quiz_3.R.id.modoruButton)
+        val modoruButton : Button = findViewById(R.id.modoruButton)
         modoruButton.setOnClickListener {
             //インテントの作成
             val intent = Intent(this, MainActivity::class.java)
