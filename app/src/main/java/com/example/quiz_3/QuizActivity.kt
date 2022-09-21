@@ -68,8 +68,8 @@ class QuizActivity : AppCompatActivity() {
 
         for (i in 0..9){
             //データをロードする
-            loadQuizList(Quiz[i])
-            //loadQuizList(5)
+            //loadQuizList(Quiz[i])
+            loadQuizList(53)
             buttonFirst.setOnClickListener{
                 AlertDialog.Builder(this)
                        // .setTitle("")
