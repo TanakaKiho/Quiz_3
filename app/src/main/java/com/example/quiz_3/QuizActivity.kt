@@ -74,7 +74,9 @@ class QuizActivity : AppCompatActivity() {
                 AlertDialog.Builder(this)
                        // .setTitle("")
                         .setMessage("正解")
-                        .setPositiveButton("OK") { dialog, which ->}
+                        .setPositiveButton("OK") { dialog, which ->
+
+                        }
                         .show()
             }
             if(i!=10) continue
