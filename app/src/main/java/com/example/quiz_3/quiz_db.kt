@@ -150,6 +150,30 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an51', 1, 'リバイバル','リロード', 'バタフライエフェクト','タイムリープ' );  "
         db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an52', 1, 'SofBank','animate', 'DMM.com','BANDAI' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an53', 3, 'バイク','車', 'ゲーム','パソコン' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an54', 2, '戦闘力…たったの5か…','じゅ…180000!?', '530000です','100万以上は確実か…' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an55', 4, 'エルヴィン団長','ナイル師団長', 'ザックレー総統','ピクシス司令' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an56', 4, '緑の煙弾','黒の煙弾', '閃光弾','音響弾' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an57', 3, 'ライナー','ベルトルト', 'アニ','ミカサ' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an58', 3, '父親','母親', '祖父','祖母' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an59', 1, 'トーマス','ミーナ', 'マルコ','コニー' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an60', 3, '102期','103期', '104期','105期' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an61', 2, '50人','100人', '150人','200人' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an62', 1, 'リヴァイ班','巨人殲滅班', '巨人殺しの達人集団','変人の巣窟' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an63', 3, '魚','新鮮な水', '紅茶','肉' );  "
+        db.execSQL(sb2)
         //【ゲーム】
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm1', 1, 'リオレイア','リオレウス', 'ラオシャンロン','ミラボレアス' );  "
         db.execSQL(sb2)
@@ -204,6 +228,16 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm26', 3, '日本の英雄（ヒーロー）','熱血甲虫', '甲虫王者','赤きサムライ' );  "
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm27', 2, 'ノコをもつサムライ','みんなのアイドル', 'オレンジのハヤブサ','黄金（こがね）の鎧' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm28', 4, '悟空＆ベジータ','孫悟飯', 'ゴールデンフリーザ','クウラ' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm29', 3, 'マナ','アルセーヌ', 'ネオ','ビナー' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm30', 4, '幻の大地','エデンの戦士たち', '空と海と大地と呪われし姫君','星空の守り人' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm31', 4, 'スライム','ドラキー', 'タマゴロン','決まっていない' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm32', 2, 'エスターク','神鳥レティス', 'キャプテン・クロウ','スぺディオ' );  "
         db.execSQL(sb2)
         //【特撮】
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('tk1', 2, 'メダル','携帯', 'カード','宝石' );  "
@@ -293,6 +327,26 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za17', 3, 'チョコレート','ココア', 'ケーキ','小麦' );  "
         db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za18', 4, '1つ','２つ', '３つ','４つ' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za19', 1, 'イボ','骨', '筋肉','脂肪' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za20', 4, '哺乳類','爬虫類', '両生類','鳥類' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za21', 2, '聴覚強化','体温調節', '体重分散','実は特にない' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za22', 1, '哺乳類','両生類', '爬虫類','鳥類' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za23', 3, '太陽光','エサの色素', '羽毛の生え変わり','羽毛の乾き' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za24', 4, '目','口', '胃','心臓' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za25', 3, '群れを作って生活する','木登りが苦手', '木から降りるのが苦手','この中にはない' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za26', 1, '哺乳類','両生類', '爬虫類','鳥類' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za27', 1, '赤色','青色', '黄色','全ての色を認識できる' );  "
+        db.execSQL(sb2)
         //【食べ物】
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co1', 1, 'ささがけ','ささがき', 'さきがけ','さきぎり' );  "
         db.execSQL(sb2)
@@ -309,6 +363,12 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co7', 2, 'マグロ','サケ', 'アジ','サンマ' );  "
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co8', 1, '酢豚','麻婆豆腐', '担々麵','棒棒鶏' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co9', 3, 'エッグノッグ','ケフィア', 'ラッシー','チェンドル' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co10', 3, 'ダイコン','ニンジン', 'トマト','カボチャ' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co11', 1, 'スターゲイジーパイ','ムーンゲイジーパイ', 'サンゲイジーパイ','スペースゲイジーパイ' );  "
         db.execSQL(sb2)
         /*【音楽】
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu1', , 'リラ','ベル', 'リサ','ヴィオラ' );  "
@@ -377,7 +437,24 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp12', 4, '200m','300m', '450m','600m' );  "
         db.execSQL(sb2)
-
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp13', 3, '赤色','青色', '黄色','緑色' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp14', 1, '赤色','青色', '黄色','緑色' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp15', 2, '20秒ルール','24秒ルール', '27秒ルール','30秒ルール' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp16', 1, 'ダブル','ハムボーン', 'ターキー','ヤッツィー' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp17', 3, 'ダブル','ハムボーン', 'ターキー','ヤッツィー' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp18', 2, 'ダブル','ハムボーン', 'ターキー','ヤッツィー' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp19', 4, 'ダブル','ハムボーン', 'ターキー','ヤッツィー' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp20', 2, 'スケルトン','トライアル', 'リユージュ','ボブスレー' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp21', 4, '赤色','青色', '黄色','緑色' );  "
+        db.execSQL(sb2)
 
         //sb2.append("INSERT INTO quiz_list_table ")
         //sb2.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
