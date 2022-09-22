@@ -92,13 +92,14 @@ class QuizActivity : AppCompatActivity() {
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
                 intent.putExtra("num", num)
-
+                intent.putExtra("ok",OK.toString())
                 //遷移先の画面を起動
                 startActivity(intent)
             }
@@ -109,14 +110,17 @@ class QuizActivity : AppCompatActivity() {
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
                 intent.putExtra("num", num)
+                intent.putExtra("ok",OK.toString())
                 //遷移先の画面を起動
                 startActivity(intent)
+
             }
         }
         buttonThird.setOnClickListener {
@@ -125,12 +129,14 @@ class QuizActivity : AppCompatActivity() {
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
                 intent.putExtra("num", num)
+                intent.putExtra("ok",OK.toString())
                 //遷移先の画面を起動
                 startActivity(intent)
             }
@@ -141,12 +147,14 @@ class QuizActivity : AppCompatActivity() {
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
                 intent.putExtra("num", num)
+                intent.putExtra("ok",OK.toString())
                 //遷移先の画面を起動
                 startActivity(intent)
             }

@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         val genreEnter : Button = findViewById(com.example.quiz_3.R.id.GenreEnter)
         genreEnter.setOnClickListener {
             var Quiz: IntArray = intArrayOf(0,0,0,0,0,0,0,0,0,0)
-            var OK=0
-            val range=(1..10)
+            var OK="0"
+            val range=(1..100)
             for(i in 0..9){
                 var n=range.random()
                 for(k in 0..i){
