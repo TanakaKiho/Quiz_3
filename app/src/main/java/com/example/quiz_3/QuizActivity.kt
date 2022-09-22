@@ -1,11 +1,13 @@
 package com.example.quiz_3
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class QuizActivity : AppCompatActivity() {
@@ -20,8 +22,10 @@ class QuizActivity : AppCompatActivity() {
         val buttonSecond : Button = findViewById(R.id.button8)
         val buttonThird : Button = findViewById(R.id.button9)
         val buttonFourth : Button = findViewById(R.id.button10)
+        val count : TextView = findViewById(R.id.countText)
         var ans=""
 
+/*
         var Quiz: IntArray = intArrayOf(0,0,0,0,0,0,0,0,0,0)
         val range=(1..5)
         for(i in 0..9){
@@ -37,8 +41,14 @@ class QuizActivity : AppCompatActivity() {
 
                 }
             }
-        }
+        }*/
 
+        var num=intent.getStringExtra("num")
+        //var n=intent.getIntExtra("num")
+        var n:Int=Integer.parseInt(num)
+        val Quiz=intent.getIntArrayExtra("quiz")
+        var ok=intent.getStringExtra("ok")
+        var OK=Integer.parseInt(ok)
         //データを取得する関数
         fun loadQuizList(ID:Int) {
 
@@ -59,30 +69,104 @@ class QuizActivity : AppCompatActivity() {
             //アダプタオブジェクト
             // val adapter = ArrayAdapter(applicationContext, android.R.layout.simple_list_item_1, listQuiz)
            // val image="R.drawable."+imag
+            var Q=n+1
             imageView.setImageResource(resources.getIdentifier(ima,"drawable",packageName))
             buttonFirst.setText(cho1)
             buttonSecond.setText(cho2)
             buttonThird.setText(cho3)
             buttonFourth.setText(cho4)
+            count.text=Q.toString()
         }
 
-        for (i in 0..9){
+        //for (i in 0..9){
             //データをロードする
             //loadQuizList(Quiz[i])
-            loadQuizList(53)
-            buttonFirst.setOnClickListener{
+            loadQuizList(Quiz!![n])
+        n++
+        num=n.toString()
+        buttonFirst.setOnClickListener {
+            if(ans=="1"){
+                OK++
+            }else{
+
+            }
+            if (n == 10) {
+                val intent = Intent(this, ResultActivity::class.java)
+                startActivity(intent)
+            } else {
+                //インテントの作成
+                val intent = Intent(this, QuizActivity::class.java)
+                intent.putExtra("quiz", Quiz)
+                intent.putExtra("num", num)
+
+                //遷移先の画面を起動
+                startActivity(intent)
+            }
+        }
+        buttonSecond.setOnClickListener {
+            if(ans=="2"){
+                OK++
+            }
+            if (n == 10) {
+                val intent = Intent(this, ResultActivity::class.java)
+                startActivity(intent)
+            } else {
+                //インテントの作成
+                val intent = Intent(this, QuizActivity::class.java)
+                intent.putExtra("quiz", Quiz)
+                intent.putExtra("num", num)
+                //遷移先の画面を起動
+                startActivity(intent)
+            }
+        }
+        buttonThird.setOnClickListener {
+            if(ans=="3"){
+                OK++
+            }
+            if (n == 10) {
+                val intent = Intent(this, ResultActivity::class.java)
+                startActivity(intent)
+            } else {
+                //インテントの作成
+                val intent = Intent(this, QuizActivity::class.java)
+                intent.putExtra("quiz", Quiz)
+                intent.putExtra("num", num)
+                //遷移先の画面を起動
+                startActivity(intent)
+            }
+        }
+        buttonFourth.setOnClickListener {
+            if(ans=="4"){
+                OK++
+            }
+            if (n == 10) {
+                val intent = Intent(this, ResultActivity::class.java)
+                startActivity(intent)
+            } else {
+                //インテントの作成
+                val intent = Intent(this, QuizActivity::class.java)
+                intent.putExtra("quiz", Quiz)
+                intent.putExtra("num", num)
+                //遷移先の画面を起動
+                startActivity(intent)
+            }
+        }
+
+
+                //loadQuizList(54)
+                /*
                 AlertDialog.Builder(this)
                        // .setTitle("")
                         .setMessage("正解")
                         .setPositiveButton("OK") { dialog, which ->
-
+                            loadQuizList(54)
                         }
-                        .show()
-            }
+                        .show()*/
+            /*
             if(i!=10) continue
 
             if(i==10) break
-        }
+        }*/
 
 
         fun onDestroy() {

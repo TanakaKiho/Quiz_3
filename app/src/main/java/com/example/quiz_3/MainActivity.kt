@@ -19,8 +19,29 @@ class MainActivity : AppCompatActivity() {
         //Viewの取得
         val genreEnter : Button = findViewById(com.example.quiz_3.R.id.GenreEnter)
         genreEnter.setOnClickListener {
+            var Quiz: IntArray = intArrayOf(0,0,0,0,0,0,0,0,0,0)
+            var OK=0
+            val range=(1..10)
+            for(i in 0..9){
+                var n=range.random()
+                for(k in 0..i){
+                    if(Quiz[k]==n){
+                        n=range.random()
+                        k==0
+                    }else if(k==i){
+                        Quiz[k]=n
+                        break
+                    }else{
+
+                    }
+                }
+            }
+            var n="0"
             //インテントの作成
             val intent = Intent(this, QuizActivity::class.java)
+            intent.putExtra("quiz",Quiz)
+            intent.putExtra("num",n)
+            intent.putExtra("ok",OK)
             //遷移先の画面を起動
             startActivity(intent)
         }
