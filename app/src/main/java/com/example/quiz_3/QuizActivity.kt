@@ -35,7 +35,7 @@ class QuizActivity : AppCompatActivity() {
         soundPool = SoundPool.Builder()
                 .setAudioAttributes(audioAttributes)
                 // ストリーム数に応じて
-                .setMaxStreams(1)
+                .setMaxStreams(2)
                 .build()
 
         // one.wav をロードしておく
@@ -148,10 +148,12 @@ class QuizActivity : AppCompatActivity() {
                 soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
+                releaseInstance()
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
+                releaseInstance()
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
@@ -165,15 +167,17 @@ class QuizActivity : AppCompatActivity() {
         buttonSecond.setOnClickListener {
             if(ans=="2"){
                 OK++
-                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+                soundPool.play(soundOne, 0.5f, 1.0f, 0, 0, 1.0f)
             }else{
-                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
+                soundPool.play(soundTwo, 0.5f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
+                releaseInstance()
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
+                releaseInstance()
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
@@ -181,21 +185,22 @@ class QuizActivity : AppCompatActivity() {
                 intent.putExtra("ok",OK.toString())
                 //遷移先の画面を起動
                 startActivity(intent)
-
             }
         }
         buttonThird.setOnClickListener {
             if(ans=="3"){
                 OK++
-                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+                soundPool.play(soundOne, 0.5f, 1.0f, 0, 0, 1.0f)
             }else{
-                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
+                soundPool.play(soundTwo, 0.5f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
+                releaseInstance()
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
+                releaseInstance()
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
@@ -213,10 +218,12 @@ class QuizActivity : AppCompatActivity() {
                 soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
+                releaseInstance()
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("ok",OK.toString())
                 startActivity(intent)
             } else {
+                releaseInstance()
                 //インテントの作成
                 val intent = Intent(this, QuizActivity::class.java)
                 intent.putExtra("quiz", Quiz)
