@@ -1,15 +1,19 @@
 package com.example.quiz_3
 
 import android.content.Intent
+import android.media.AudioAttributes
+import android.media.SoundPool
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 
 class ResultActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
 
         //Viewの取得
         val backbutton : Button = findViewById(R.id.backbutton)

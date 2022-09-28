@@ -3,7 +3,10 @@ package com.example.quiz_3
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
+import android.media.AudioAttributes
+import android.media.SoundPool
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
@@ -15,6 +18,35 @@ class QuizActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
+
+        lateinit var soundPool: SoundPool
+        var soundOne = 0
+        var soundTwo = 0
+
+        val audioAttributes = AudioAttributes.Builder()
+                // USAGE_MEDIA
+                // USAGE_GAME
+                .setUsage(AudioAttributes.USAGE_GAME)
+                // CONTENT_TYPE_MUSIC
+                // CONTENT_TYPE_SPEECH, etc.
+                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                .build()
+
+        soundPool = SoundPool.Builder()
+                .setAudioAttributes(audioAttributes)
+                // ストリーム数に応じて
+                .setMaxStreams(1)
+                .build()
+
+        // one.wav をロードしておく
+        soundOne = soundPool.load(this, R.raw.enter, 1)
+        // two.wav をロードしておく
+        soundTwo = soundPool.load(this, R.raw.cancel, 1)
+        // load が終わったか確認する場合
+        soundPool.setOnLoadCompleteListener{ soundPool, sampleId, status ->
+            Log.d("debug", "sampleId=$sampleId")
+            Log.d("debug", "status=$status")
+        }
         val _helper = quiz_db(this)
         _helper.fileDelete()
         val imageView : ImageView = findViewById(R.id.imageView)
@@ -78,17 +110,20 @@ class QuizActivity : AppCompatActivity() {
             count.text=Q.toString()
         }
 
+
         //for (i in 0..9){
             //データをロードする
             //loadQuizList(Quiz[i])
             loadQuizList(Quiz!![n])
         n++
         num=n.toString()
-        buttonFirst.setOnClickListener {
-            if(ans=="1"){
+        /*
+        fun click(num:String){
+            if(ans==num){
                 OK++
+                //soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
             }else{
-
+                //soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
@@ -103,10 +138,36 @@ class QuizActivity : AppCompatActivity() {
                 //遷移先の画面を起動
                 startActivity(intent)
             }
+        }*/
+        buttonFirst.setOnClickListener {
+
+            if(ans=="1"){
+                OK++
+                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+            }else{
+                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
+            }
+            if (n == 10) {
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("ok",OK.toString())
+                startActivity(intent)
+            } else {
+                //インテントの作成
+                val intent = Intent(this, QuizActivity::class.java)
+                intent.putExtra("quiz", Quiz)
+                intent.putExtra("num", num)
+                intent.putExtra("ok",OK.toString())
+                //遷移先の画面を起動
+                startActivity(intent)
+            }
+            //click("1")
         }
         buttonSecond.setOnClickListener {
             if(ans=="2"){
                 OK++
+                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+            }else{
+                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
@@ -126,6 +187,9 @@ class QuizActivity : AppCompatActivity() {
         buttonThird.setOnClickListener {
             if(ans=="3"){
                 OK++
+                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+            }else{
+                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
@@ -144,6 +208,9 @@ class QuizActivity : AppCompatActivity() {
         buttonFourth.setOnClickListener {
             if(ans=="4"){
                 OK++
+                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+            }else{
+                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
