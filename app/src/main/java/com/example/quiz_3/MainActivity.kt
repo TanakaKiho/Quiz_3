@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         genreEnter.setOnClickListener {
             var Quiz: IntArray = intArrayOf(0,0,0,0,0,0,0,0,0,0)
             var OK="0"
-            val range=(1..200)
+            val range=(1..181)
             for(i in 0..9){
                 var n=range.random()
                 for(k in 0..i){

@@ -370,10 +370,10 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co11', 1, 'スターゲイジーパイ','ムーンゲイジーパイ', 'サンゲイジーパイ','スペースゲイジーパイ' );  "
         db.execSQL(sb2)
-        /*【音楽】
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu1', , 'リラ','ベル', 'リサ','ヴィオラ' );  "
+        //【音楽】
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu1', 3, 'リラ','ベル', 'リサ','ヴィオラ' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu2', , '卓球でスマッシュを打つ曲','サッカーボールを蹴る曲', '野球ボールを打つ曲','バスケットボールでドリブルする曲' );  "
+        /*sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu2', , '卓球でスマッシュを打つ曲','サッカーボールを蹴る曲', '野球ボールを打つ曲','バスケットボールでドリブルする曲' );  "
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu3', , 'マスカラを割る曲','ティンパニーを突き破る曲', 'コントラバスの弦を切る曲','シンバルを折る曲' );  "
         db.execSQL(sb2)

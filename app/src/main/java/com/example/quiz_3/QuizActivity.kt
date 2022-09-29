@@ -22,7 +22,7 @@ class QuizActivity : AppCompatActivity() {
         lateinit var soundPool: SoundPool
         var soundOne = 0
         var soundTwo = 0
-
+/*
         val audioAttributes = AudioAttributes.Builder()
                 // USAGE_MEDIA
                 // USAGE_GAME
@@ -46,7 +46,7 @@ class QuizActivity : AppCompatActivity() {
         soundPool.setOnLoadCompleteListener{ soundPool, sampleId, status ->
             Log.d("debug", "sampleId=$sampleId")
             Log.d("debug", "status=$status")
-        }
+        }*/
         val _helper = quiz_db(this)
         _helper.fileDelete()
         val imageView : ImageView = findViewById(R.id.imageView)
@@ -114,7 +114,13 @@ class QuizActivity : AppCompatActivity() {
         //for (i in 0..9){
             //データをロードする
             //loadQuizList(Quiz[i])
+       // try{
             loadQuizList(Quiz!![n])
+     /*  }catch (e:Exception){
+            loadQuizList(201)
+            Log.d("debug", "$e")
+        }*/
+
         n++
         num=n.toString()
         /*
@@ -143,9 +149,9 @@ class QuizActivity : AppCompatActivity() {
 
             if(ans=="1"){
                 OK++
-                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+                //soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
             }else{
-                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
+                //soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 releaseInstance()
@@ -167,9 +173,9 @@ class QuizActivity : AppCompatActivity() {
         buttonSecond.setOnClickListener {
             if(ans=="2"){
                 OK++
-                soundPool.play(soundOne, 0.5f, 1.0f, 0, 0, 1.0f)
+                // soundPool.play(soundOne, 0.5f, 1.0f, 0, 0, 1.0f)
             }else{
-                soundPool.play(soundTwo, 0.5f, 1.0f, 1, 0, 1.0f)
+                //  soundPool.play(soundTwo, 0.5f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 releaseInstance()
@@ -190,9 +196,9 @@ class QuizActivity : AppCompatActivity() {
         buttonThird.setOnClickListener {
             if(ans=="3"){
                 OK++
-                soundPool.play(soundOne, 0.5f, 1.0f, 0, 0, 1.0f)
+                // soundPool.play(soundOne, 0.5f, 1.0f, 0, 0, 1.0f)
             }else{
-                soundPool.play(soundTwo, 0.5f, 1.0f, 1, 0, 1.0f)
+                // soundPool.play(soundTwo, 0.5f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 releaseInstance()
@@ -213,9 +219,9 @@ class QuizActivity : AppCompatActivity() {
         buttonFourth.setOnClickListener {
             if(ans=="4"){
                 OK++
-                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
+                // soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1.0f)
             }else{
-                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
+                //  soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1.0f)
             }
             if (n == 10) {
                 releaseInstance()
