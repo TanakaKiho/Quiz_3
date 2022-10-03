@@ -45,6 +45,29 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         //db.execSQL(del)
 
         //下の三行がひとつのかたまり
+
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp5', 4, '1点','2点', '3点','5点' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('co4', 4, '日本料理','イタリア料理', 'アイルランド料理','トルコ料理' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za27', 1, '赤色','青色', '黄色','全ての色を認識できる' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('za13', 4, 'クラベド','フラベド', 'ミリアド','アルベド' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu1', 3, 'リラ','ベル', 'リサ','ヴィオラ' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('gm21', 2, '３周','５周', '７周','９周' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('tk4', 3, 'ダイヤ','クラブ', 'スペード','ハート' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an32', 1, 'ロードローラー','ダンプ', '掘削機','不発弾' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an37', 4, '肉体','右腕', '内蔵','左脚' );  "
+        db.execSQL(sb2)
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('anime9', 3, '赤','青', '黒','白' );  "
+        db.execSQL(sb2)
+
+        /*
         //【アニメ】
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('an1', 1, '心臓麻痺','呼吸停止', '脳出血','衰弱死' );  "
         db.execSQL(sb2)
@@ -373,45 +396,44 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         //【音楽】
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu1', 3, 'リラ','ベル', 'リサ','ヴィオラ' );  "
         db.execSQL(sb2)
-        /*sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu2', , '卓球でスマッシュを打つ曲','サッカーボールを蹴る曲', '野球ボールを打つ曲','バスケットボールでドリブルする曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu2', 1, '卓球でスマッシュを打つ曲','サッカーボールを蹴る曲', '野球ボールを打つ曲','バスケットボールでドリブルする曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu3', , 'マスカラを割る曲','ティンパニーを突き破る曲', 'コントラバスの弦を切る曲','シンバルを折る曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu3', 2, 'マスカラを割る曲','ティンパニーを突き破る曲', 'コントラバスの弦を切る曲','シンバルを折る曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu4', , '机を破壊する曲','帽子をたたく曲', 'フライパンをたたく曲','餅つきをする曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu4', 3, '机を破壊する曲','帽子をたたく曲', 'フライパンをたたく曲','餅つきをする曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu5', , '練習曲','夜想曲', '行進曲','円舞曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu5', 2, '練習曲','夜想曲', '行進曲','円舞曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu6', , '交響曲','小夜曲', '練習曲','幻想曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu6', 1, '交響曲','小夜曲', '練習曲','幻想曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu7', , '海想曲','乱舞曲', '前奏曲','後奏曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu7', 3, '海想曲','乱舞曲', '前奏曲','後奏曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu8', , '三重奏','四重奏', '五重奏','六重奏' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu8', 2, '三重奏','四重奏', '五重奏','六重奏' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu9', , '交響曲','練習曲', '行進曲','幻想曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu9', 4, '交響曲','練習曲', '行進曲','幻想曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu10', , '協奏曲','交響曲', '幻想曲','夜想曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu10', 1, '協奏曲','交響曲', '幻想曲','夜想曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu11', , '夜想曲','小夜曲', '鎮魂歌','幻想曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu11', 3, '夜想曲','小夜曲', '鎮魂歌','幻想曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu12', , '行進曲','交響曲', '前進曲','幻想曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu12', 1, '行進曲','交響曲', '前進曲','幻想曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu13', , '夜想曲','狂詩曲', '小夜曲','幻想曲' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu13', 2, '夜想曲','狂詩曲', '小夜曲','幻想曲' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu14', , 'サックス','ホルン', 'フルート','オーボエ' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu14', 2, 'サックス','ホルン', 'フルート','オーボエ' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu15', , 'ユーフォニウム','サックス', 'トランペット','トロンボーン' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu15', 2, 'ユーフォニウム','サックス', 'トランペット','トロンボーン' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu16', , 'ソプラノサックス','アルトサックス', 'テナーサックス','バリトンサックス' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu16', 2, 'ソプラノサックス','アルトサックス', 'テナーサックス','バリトンサックス' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu17', , 'バスドラム','スネアドラム', 'クラッシュシンバル','シロファン' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu17', 4, 'バスドラム','スネアドラム', 'クラッシュシンバル','シロファン' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu18', , '日本','アメリカ（英語圏）', 'ドイツ','イタリア' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu18', 4, '日本','アメリカ（英語圏）', 'ドイツ','イタリア' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu19', , 'クラリネット','サックス', 'ホルン','オーボエ' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu19', 2, 'クラリネット','サックス', 'ホルン','オーボエ' );  "
         db.execSQL(sb2)
-        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu20', , '長調','旋律的短調', '自然的短調','和声的短調' );  "
+        sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('mu20', 1, '長調','旋律的短調', '自然的短調','和声的短調' );  "
         db.execSQL(sb2)
-        */
         //【スポーツ】
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp1', 2, 'レッドカード','イエローカード', 'グリーンカード','ブラックカード' );  "
         db.execSQL(sb2)
@@ -455,6 +477,7 @@ public class quiz_db(private val context: Context): SQLiteOpenHelper(context,DAT
         db.execSQL(sb2)
         sb2="INSERT INTO quiz_list_table (question_image, answer, choice_1, choice_2, choice_3, choice_4) VALUES ('sp21', 4, '赤色','青色', '黄色','緑色' );  "
         db.execSQL(sb2)
+        */
 
         //sb2.append("INSERT INTO quiz_list_table ")
         //sb2.append("(_id, question_image, answer, choice_1, choice_2, choice_3, choice_4) values (")
