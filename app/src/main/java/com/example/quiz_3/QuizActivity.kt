@@ -95,6 +95,7 @@ class QuizActivity : AppCompatActivity() {
             val cho2=listQuiz[5]
             val cho3=listQuiz[6]
             val cho4=listQuiz[7]
+            val number=listQuiz[1]
 
             //R.drawable.sp_1
             //val imag="sp_1"
