@@ -22,19 +22,19 @@ class MainActivity : AppCompatActivity() {
             var Quiz: IntArray = intArrayOf(0,0,0,0,0,0,0,0,0,0)
             var OK="0"
             val range=(1..10)
+            var k=0
             for(i in 0..9){
                 var n=range.random()
-                for(k in 0..i){
+                while(k<=i){
                     if(Quiz[k]==n){
                         n=range.random()
-                        k==0
-                    }else if(k==i){
-                        Quiz[k]=n
-                        break
+                        k=0
                     }else{
-
+                        k++
                     }
                 }
+                Quiz[i]=n
+                k=0
             }
             var n="0"
             //インテントの作成
